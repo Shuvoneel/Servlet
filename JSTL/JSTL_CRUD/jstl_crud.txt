@@ -1,0 +1,11 @@
+........................ Sequence of Task for JSTL_CRUD project
+	1. add jar
+	2.  create page index.jsp, insert.jsp, display.jsp
+	3. work in insert.jsp page
+	4. work in insertdb.jsp page
+	5. work in display.jsp page
+	6. work in update.jsp page
+	7. work in updatedb.jsp page
+	8. work in delete.jsp page
+	9. create database and tables in mysql
+	10. create table product( id int auto_increment primary key, pname varchar(30), quantity int);
