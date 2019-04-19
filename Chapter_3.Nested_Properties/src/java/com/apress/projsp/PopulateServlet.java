@@ -16,25 +16,25 @@ public class PopulateServlet extends HttpServlet {
 		throws ServletException, IOException {
 
 		Person p = new Person();
-		p.setName("Hasina");
+		p.setName("Shuvo");
 		p.setAge(26);
 
 		Address a = new Address();
-		a.setLine1("221b Gono Bhabhon");
+		a.setLine1("111 Central Road");
 		a.setTown("Dhaka");
 		a.setCounty("BD");
-		a.setPostcode("NW1 1AA");
+		a.setPostcode("1105");
 
 		ArrayList al = new ArrayList();
 		PhoneNumber ph = new PhoneNumber();
-		ph.setStd("01711");
-		ph.setNumber("620000");
+		ph.setStd("01717");
+		ph.setNumber("677451");
 		
 		al.add(ph);
 		
 		ph = new PhoneNumber();
-		ph.setStd("01686");
-		ph.setNumber("870000");		
+		ph.setStd("01521");
+		ph.setNumber("252064");		
 		al.add(ph);
 		a.setPhoneNumbers(al);
 		

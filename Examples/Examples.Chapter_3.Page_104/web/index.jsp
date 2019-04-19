@@ -8,10 +8,10 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        ${'${'}10}
+       
           <table border="1">
       <tr>
-        <td><b>Concept</b></td>
+          <td><b>Concept</b></td>
         <td><b>EL Expression</b></td>
         <td><b>Result</b></td>
       </tr>    
