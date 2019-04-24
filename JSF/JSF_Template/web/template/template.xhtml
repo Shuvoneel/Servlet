@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+        <h:head>
+            <h:outputStylesheet library="css" name="theme.css"/>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Primefaces</title>
+                <link type="css" rel="stylesheet" href="${request.contextPath}/faces/javax.faces.resource/theme.css?ln=primefaces-bootstrap"/>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <ui:include src="header.xhtml"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" resizable="true" closable="true" collapsible="true">
+                    <ui:include src="footer.xhtml"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="left" collapsible="true">
+                    <ui:include src="left.xhtml"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <ui:insert name="content"/>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+
+</html>
