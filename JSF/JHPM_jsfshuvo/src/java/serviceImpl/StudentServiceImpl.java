@@ -41,4 +41,13 @@ public class StudentServiceImpl implements StudentService {
         tr.commit();
     }
 
+    @Override
+    public void delete(Student student) {
+        SessionFactory sf = NewHibernateUtil.getSessionFactory();
+        Session sn = sf.getCurrentSession();
+        Transaction tr = sn.beginTransaction();
+        sn.delete(student);
+        tr.commit();
+    }
+
 }

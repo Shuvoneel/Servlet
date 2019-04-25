@@ -19,15 +19,22 @@ public class StudentController {
     public void save() {
         service = new StudentServiceImpl();
         service.save(student);
-        FacesContext.getCurrentInstance().addMessage("MessageId", new FacesMessage(FacesMessage.SEVERITY_INFO, "Save Successfull!", "You did something!"));
+        FacesContext.getCurrentInstance().addMessage("MessageId", new FacesMessage(FacesMessage.SEVERITY_INFO, "Save Successfull!", null));
         System.out.println("Saved Successfully !");
     }
 
     public void update() {
         service = new StudentServiceImpl();
         service.update(student);
-        FacesContext.getCurrentInstance().addMessage("MessageIdUp", new FacesMessage(FacesMessage.SEVERITY_INFO, "Update Successfull!", "You did something!"));
+        FacesContext.getCurrentInstance().addMessage("MessageIdUp", new FacesMessage(FacesMessage.SEVERITY_INFO, "Update Successfull!", null));
         System.out.println("Updated Successfully !");
+    }
+
+    public void delete() {
+        service = new StudentServiceImpl();
+        service.delete(student);
+        FacesContext.getCurrentInstance().addMessage("MessageIdUp", new FacesMessage(FacesMessage.SEVERITY_INFO, "Delete Successfull!", null));
+        System.out.println("Deleted Successfully !");
     }
 
     public Student getStudent() {
