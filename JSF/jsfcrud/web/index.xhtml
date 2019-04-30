@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>index</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <div style="width: 90%; margin: auto;  text-align: center; font-size: xx-large; color: green">
+                <h1>Welcome to Student Data Store</h1>
+            </div>
+
+            <div style="width: 90%; margin: auto">
+                <h:form id="aa">
+                    <p:messages for="MessageId" showDetail="false" autoUpdate="true" closable="true"/>
+                    <p:messages for="MessageIdUp" showDetail="false" autoUpdate="true" closable="true"/>
+
+                    <p:outputLabel value="ID:  "/>
+                    <p:inputText value="#{studentController.student.id}"/><br/>
+
+                    <p:outputLabel value="Name:  "/>
+                    <p:inputText value="#{studentController.student.name}"/><br/>
+
+                    <p:outputLabel value="Gender:  "/>
+                    <p:selectOneRadio id="gender" value="#{studentController.student.gender}">
+                        <f:selectItem itemLabel="Male" itemValue="Male" />
+                        <f:selectItem itemLabel="Female" itemValue="Female" />
+                    </p:selectOneRadio><br/>
+
+                    <p:outputLabel value="Round:  "/>
+                    <p:selectOneMenu id="round" value="#{studentController.student.round}" style="width:125px">
+                        <f:selectItem itemLabel="Select One" itemValue="" />
+                        <f:selectItem itemLabel="Round 37" itemValue="Round 37" />
+                        <f:selectItem itemLabel="Round 38" itemValue="Round 38" />
+                        <f:selectItem itemLabel="Round 39" itemValue="Round 39" />
+                    </p:selectOneMenu><br/>
+
+                    <p:outputLabel value="Completed Course:  "/>
+                    <p:selectManyCheckbox id="course" value="#{studentController.student.completedCourse}">
+                        <f:selectItem itemLabel="HTML" itemValue="HTML" />
+                        <f:selectItem itemLabel="Oracle" itemValue="Oracle" />
+                        <f:selectItem itemLabel="Java" itemValue="Java" />
+                    </p:selectManyCheckbox><br/>
+
+                    <p:outputLabel value="Status:  "/>
+                    <p:selectOneMenu id="status" value="#{studentController.student.status}" style="width:125px">
+                        <f:selectItem itemLabel="Running" itemValue="Running" />
+                        <f:selectItem itemLabel="Completed" itemValue="Completed" />
+                    </p:selectOneMenu><br/>
+
+                    <p:outputLabel value="Date:  "/>
+                    <p:calendar value="#{studentController.student.startingDate}"/><br/>
+
+                    <p:outputLabel value="Notes:  "/>
+                    <p:inputText value="#{studentController.student.notes}"/><br/>
+
+                    <p:commandButton action="#{studentController.save()}" value="Save" update=":lists:stuList"/>
+                    <p:commandButton action="#{studentController.update()}" value="Update" update=":lists:stuList"/>
+                    <p:commandButton action="#{studentController.delete()}" value="Delete" update=":lists:stuList"/>
+                    <h:commandButton value="Reset" style="margin-right:25px;" >
+                        <p:ajax update="aa" resetValues="true" />
+                    </h:commandButton>
+
+                </h:form>
+            </div><hr/>
+
+            <div style="width: 90%; margin: auto">
+                <h:form id="lists">
+                    <p:dataTable id="stuList" var="stu" value="#{studentController.studentsList}">
+                        <p:column headerText="ID">
+                            <h:outputText value="#{stu.id}" />
+                        </p:column>
+
+                        <p:column headerText="Name">
+                            <h:outputText value="#{stu.name}" />
+                        </p:column>
+
+                        <p:column headerText="Gender">
+                            <h:outputText value="#{stu.gender}" />
+                        </p:column>
+
+                        <p:column headerText="Round">
+                            <h:outputText value="#{stu.round}" />
+                        </p:column>
+
+                        <p:column headerText="Completed Course">
+                            <p:dataList var="course" value="#{stu.completedCourse}" type="ordered">
+                                <h:outputText value="#{course}"/>
+                            </p:dataList>
+                        </p:column>
+
+                        <p:column headerText="Status">
+                            <h:outputText value="#{stu.status}" />
+                        </p:column>
+
+                        <p:column headerText="Starting Date">
+                            <h:outputText value="#{stu.startingDate}">
+                                <f:convertDateTime pattern="dd.MM.yyyy" />
+                            </h:outputText>
+                        </p:column>
+
+                        <p:column headerText="Notes">
+                            <h:outputText value="#{stu.notes}" />
+                        </p:column>
+
+                    </p:dataTable>
+                </h:form>
+            </div>
+        </h:body>
+
+    </f:view>
+</html>
+

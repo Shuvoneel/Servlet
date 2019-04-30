@@ -1,0 +1,44 @@
+
+	step 1: create a database (jsfcrud)
+
+	step 2: create a project
+		tomcat
+		jsf: primeface component
+		hibernate: new database connection
+			select mysql driver
+			next
+			type database name (step 1) and password
+			test connection
+			finish
+
+	step 3: delete welcomeprimefaces and index page
+
+	step 4: create package controller, entity, service, implementation, util in source packages
+
+	step 5: create NewHibernateUtil class in util package
+		new - other - Hibernate - Hibernate.util
+
+	step 6: create Student class in entity package
+		add: @Entity & @Table for auto create entity & table in database
+		add: @Id & @GeneratedValue(strategy = GenerationType.IDENTITY) for auto generation of id
+
+	step 7: open hibernate.cfg.xml page
+		add following files in session factory....
+			<property name="hibernate.hbm2ddl.auto">update</property>
+        			<property name="hibernate.current_session_context_class">thread</property>
+        			<property name="show_sql">true</property>
+        			<mapping class="entity.Student"></mapping>
+
+	step 8: create StudentService interface in service package
+		add: methods
+
+	step 9: create StudentImplementation class in implementation package and implements StudentService interface
+
+	step 10: create StudentController in controller package
+		add: @ManagedBean to make it a controller
+
+	step 11: create index.xhtml page in webapps package
+	
+	step 12: add mysql connector jar in library
+
+	step 13: run the project
