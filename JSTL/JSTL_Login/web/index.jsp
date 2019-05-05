@@ -17,16 +17,10 @@
             <c:redirect url="login.jsp" />
         </c:if>
 
-        <a href="login.jsp">Logout </a>
+        <a href="login.jsp">Logout
+            <c:if test="${empty sessionScope['loginUser']}">
+                <c:redirect url="login.jsp" />
+            </c:if>
+        </a>
     </body>
 </html>
-<!--
-create database jstlshuvo;
-CREATE TABLE users(
-  id int(10) auto_increment primary key,
-  username varchar(45) NOT NULL,
-  password varchar(45) NOT NULL
-);
- 
-INSERT INTO users (username,password) VALUES ("admin","123");
--->

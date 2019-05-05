@@ -1,0 +1,17 @@
+step 1:	Add mysql driver, jstl-api.jar, jstl-impl.jar and mysql-connector-java-5.1.38.jar
+
+step 2:	create database jstlshuvo;
+
+step 3:	CREATE TABLE users(
+  	id int(10) auto_increment primary key,
+  	username varchar(45) NOT NULL,
+  	password varchar(45) NOT NULL
+	);
+ 
+step 4:	insert into users (username,password) VALUES ("admin","123");
+
+step 5:	login page: username and password field must be same with database
+
+step 6:	authentication page: loginUser variable is created in this page and is used in index page
+
+step 7:	index page to display
