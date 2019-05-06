@@ -16,8 +16,10 @@
         </script>
     </head>
     <body>
-        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlshuvo"
-                           user="root" password="1234"></sql:setDataSource>
+        <sql:setDataSource
+            var="dbsource" driver="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost/jstlcrud"
+            user="root" password="1234"></sql:setDataSource>
         <sql:query dataSource="${dbsource}" var="result">
             select * from product;
         </sql:query>

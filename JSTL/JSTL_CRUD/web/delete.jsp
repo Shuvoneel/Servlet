@@ -7,10 +7,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Deletedb Page</title>
+        <title>Delete Page</title>
     </head>
     <body>
-            <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlshuvo"
+            <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlcrud"
                            user="root" password="1234" />
         <sql:update dataSource="${dbsource}" var="count">
             delete from product where id='${param.id}';

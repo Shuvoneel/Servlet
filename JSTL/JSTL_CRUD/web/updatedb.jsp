@@ -10,7 +10,7 @@
         <title>Updatedb Page</title>
     </head>
     <body>
-        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlshuvo"
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlcrud"
                            user="root" password="1234"></sql:setDataSource>
         <sql:update dataSource="${dbsource}" var="count">
             update product set pname = ?, quantity = ? where id='${param.id}'

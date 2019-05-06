@@ -10,7 +10,7 @@
         <title>Update Page</title>
     </head>
     <body>
-        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlshuvo"
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlcrud"
                            user="root" password="1234"></sql:setDataSource>
         <sql:query dataSource="${dbsource}" var="result">
             select * from product where id=?;

@@ -15,7 +15,7 @@
                 <c:param name="errMsg" value="Please Enter Product Name and Quantity"/>
             </c:redirect>
         </c:if>
-        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlshuvo"
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/jstlcrud"
                            user="root" password="1234" />
         <sql:update dataSource="${dbsource}" var="result">
             insert into product(pname, quantity) values(?,?)

@@ -43,6 +43,7 @@
             <c:out value="${param.succMsg}"/>
         </c:if>
         </font>
+        <a href="display.jsp">Display</a>
         <a href="index.jsp">Go Home</a>
 
     </body>
