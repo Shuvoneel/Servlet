@@ -1,0 +1,9 @@
+1. what's authentication, authorization and authenticated user? Describe with diagram
+
+2. define data integrity, data privacy/confidentiality?
+
+3. define realm?
+
+4. security constraint diagram
+
+5. describe types of authentication method
