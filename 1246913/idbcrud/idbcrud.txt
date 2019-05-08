@@ -1,0 +1,5 @@
+
+	1.	add jstl api, impl & mysql connector jar
+	2.	create database idbcrud;
+	3.	use idbcrud;
+	4.	create table product( id int auto_increment primary key, pname varchar(30), quantity int);

@@ -1,0 +1,47 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class StudentController {
+
+    private Student student;
+    private List<Student> studentsList;
+    private StudentImpl studentImpl;
+
+    public List<Student> getStudentsList() {
+        studentsList = new ArrayList<>();
+        studentImpl = new StudentImpl();
+        studentsList = studentImpl.getStudents();
+        return studentsList;
+    }
+
+    public void save() {
+        studentImpl = new StudentImpl();
+        studentImpl.save(student);
+        student = new Student();
+        System.out.println("Saved Successfully !");
+    }
+
+    public void update() {
+        studentImpl = new StudentImpl();
+        studentImpl.update(student);
+        student = new Student();
+        System.out.println("Updated Successfully !");
+    }
+
+    public void delete() {
+        studentImpl = new StudentImpl();
+        studentImpl.delete(student);
+        System.out.println("Deleted Successfully !");
+    }
+
+    public Student getStudent() {
+        if (student == null) {
+            student = new Student();
+        }
+        return student;
+    }
+
+}
