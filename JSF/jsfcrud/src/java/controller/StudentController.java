@@ -16,6 +16,17 @@ public class StudentController {
     private List<Student> students;
     private StudentService service;
 
+    public List<Student> getStudentsList() {
+        students = new ArrayList<>();
+        service = new StudentImplementation();
+        students = service.getStudents();
+        return students;
+    }
+
+    public void setStudentsList(List<Student> studentsList) {
+        this.students = studentsList;
+    }
+
     public void save() {
         service = new StudentImplementation();
         service.save(student);
@@ -50,14 +61,4 @@ public class StudentController {
         this.student = student;
     }
 
-    public List<Student> getStudentsList() {
-        students = new ArrayList<>();
-        service = new StudentImplementation();
-        students = service.getStudents();
-        return students;
-    }
-
-    public void setStudentsList(List<Student> studentsList) {
-        this.students = studentsList;
-    }
 }

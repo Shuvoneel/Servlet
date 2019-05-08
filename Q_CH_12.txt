@@ -7,3 +7,11 @@
 4. security constraint diagram
 
 5. describe types of authentication method
+
+6. how to redirect jsp page after successfull login?
+
+7. what is error page and how can you build it?
+
+8. what is SSL and how does it work?
+
+9. 
