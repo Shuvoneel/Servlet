@@ -16,7 +16,7 @@
             <url-pattern>/mem/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>tomcat</role-name>
+            <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
     

@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/securityFormMysql"/>
+<Context debug="99" docBase="securityForm" path="/securityFormMysql">
+    <Realm className="org.apache.catalina.realm.JDBCRealm" connectionName="root" connectionPassword="1234" connectionURL="jdbc:mysql://localhost:3306/idb" debug="99" driverName="com.mysql.jdbc.Driver" roleNameCol="role" userCredCol="password" userNameCol="username" userRoleTable="roles" userTable="users"/>
+</Context>

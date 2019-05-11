@@ -1,0 +1,10 @@
+1. add theme jar and primeface jar file to lib folder
+2. add war file to tomcat/webapps folder
+3. stop and start tomcat
+4. create a new project
+5. copy resources folder from volt
+6. copy lib folder from volt
+7. copy source code from web.xml
+8. take an updatefacesconfig file and enter the code from facesconfig file from volt/webinf
+9. copy other files from volt/webinf folder
+10. delete java code files from layoutmenu.xhtml, if needed

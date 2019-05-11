@@ -1,0 +1,8 @@
+1. what is primefaces? how can you get primeface jar file to write with jsf?
+2. what is primaface repository config?
+3. what is primaface dependency artifact?
+4. when will you use the following jar file-jsf, primefaces, itext, apache poi, rome, commons-io
+5. primeface provides ppr-explain
+6. what do the following keywords do- @this, @form, @parent, @none, @all
+7. what is i18 and l10n? what are differences between i18n and l10n
+8. primaface implements our 
