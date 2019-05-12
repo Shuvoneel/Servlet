@@ -13,12 +13,16 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Security Example</web-resource-name>
-            <url-pattern>/mem/*</url-pattern>
+            <url-pattern>/jdbc/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>admin</role-name>
+            <role-name>developer</role-name>
         </auth-constraint>
     </security-constraint>
+    
+    <security-role>
+        <role-name>developer</role-name>
+    </security-role>
     
     <login-config>
         <auth-method>FORM</auth-method>

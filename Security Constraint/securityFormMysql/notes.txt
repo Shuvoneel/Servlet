@@ -1,0 +1,13 @@
+1. create database idb;
+
+2. create table roles(username varchar(30), role varchar(30));
+
+3. create table users(username varchar(30), password varchar(30));
+
+4. insert into roles values("tomcat", "developer");
+
+5. insert into users values("tomcat", "1234");
+
+6. edit context.xml file
+
+7. edit web.xml file

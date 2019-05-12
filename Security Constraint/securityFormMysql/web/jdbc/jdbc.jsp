@@ -4,10 +4,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index Page</title>
+        <title>JDBC Page</title>
     </head>
     <body>
-        <a href="jdbc/jdbc.jsp">jdbc.jsp</a>
-        This page is username and password protected.
+        <h2>If you enter into this page, you are an authenticated user.</h2>
     </body>
 </html>
