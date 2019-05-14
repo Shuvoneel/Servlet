@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>AccordionPanel Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:accordionPanel>  
+                <p:tab title="Volkswagen CC">    
+                    <h:panelGrid columns="2" cellpadding="10">     
+                        <h:graphicImage library="images"        name="autocomplete/CC.png" />     
+                        <h:outputText value="The Volkswagen CC (also known as the        Volkswagen Passat CC) is a four-door coupé version of         the Volkswagen Passat." />   
+                    </h:panelGrid>  
+                </p:tab>  
+                <p:tab title="Volkswagen Golf">   
+                    <h:panelGrid columns="2" cellpadding="10">     
+                        <h:graphicImage library="images"        name="autocomplete/Golf.png" />     
+                        <h:outputText value="The Volkswagen Golf is a small        family car manufactured by Volkswagen since 1974 and        marketed worldwide across six generations, in various        body configurations and under various nameplates" />   
+                    </h:panelGrid> 
+                </p:tab>
+            </p:accordionPanel>
+        </h:form>
+    </h:body>
+</html>

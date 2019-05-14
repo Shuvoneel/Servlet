@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Index </title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="msgs" showDetail="true" />
+
+            <p:panel id="basic" header="Basic" footer="Movie Details" style="margin-bottom:20px">
+                <h:panelGrid columns="3" cellpadding="10">
+                    <p:graphicImage name="images" />
+                    <h:outputText value="Panel @ column 2" />
+                    <h:outputText value="Panel @ column 3" />
+                </h:panelGrid>
+            </p:panel>
+
+            <p:panel id="toggleable" header="Toggleable" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
+
+                <p:ajax event="close" listener="#{panelView.onClose(event)}" update="msgs" />
+                <p:ajax event="toggle" listener="#{panelView.onToggle(event)}" update="msgs" />
+
+                <h:panelGrid columns="3" cellpadding="10">
+                    <p:graphicImage name="images" />
+                    <h:outputText value="Toggleable @ column 2" />
+                    <h:outputText value="Toggleable @ column 3" />
+                </h:panelGrid>
+
+                <f:facet name="options">
+                    <p:menu>
+                        <p:submenu label="Settings">
+                            <p:menuitem value="Toggle" url="#" icon="pi pi-clone" onclick="PF('panel').toggle()" />
+                            <p:menuitem value="Remove" url="#" icon="pi pi-times" onclick="PF('panel').close()" />
+                        </p:submenu>
+                    </p:menu>
+                </f:facet>
+            </p:panel>
+        </h:form>
+        <a href="accordionPanel.xhtml">Accordion</a><br/>
+        <a href="panelGrid.xhtml">PanelGrid</a><br/>
+        <a href="stackedPanel.xhtml">Stacked Panel</a><br/>
+        <a href="tabbedPanel.xhtml">Tabbed Panel</a><br/>
+        <a href="toolbar.xhtml">Toolbar</a>
+        <a href="dashboard.xhtml">Dashboard</a>
+    </h:body>
+</html>

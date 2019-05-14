@@ -48,6 +48,12 @@
                             <p:ajax update="msg" listener="#{selectBooleanView.addMessage}" />
                         </p:selectBooleanCheckbox><br/>
 
+                        <p:outputLabel for="date" value="Date: " />
+                        <p:inputMask id="date" value="#{maskView.date}" mask="99/99/9999"/>
+
+                        <p:outputLabel for="phone" value="Phone:" />
+                        <p:inputMask id="phone" value="#{maskView.phone}" mask="(999) 999-9999"/>
+
                         <p:commandButton value="Submit" icon="pi pi-check"  />
                     </h:form>
                 </p:layoutUnit>
