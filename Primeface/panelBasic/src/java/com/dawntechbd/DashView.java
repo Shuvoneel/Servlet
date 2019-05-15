@@ -10,8 +10,8 @@ public class DashView {
     public DashClass getDashboard() {
         if (dashboard == null) {
             dashboard = new DashClass();
+            dashboard.setDashTitle("Mobile Details");
         }
-        dashboard.getDashTitle();
         return dashboard;
     }
 

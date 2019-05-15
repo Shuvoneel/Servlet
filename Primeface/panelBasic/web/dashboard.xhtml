@@ -10,16 +10,61 @@
     <h:head>
         <title>Dashboard Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            .row{
+                width: 100%;
+                height: auto;
+            }
+            .col{
+                width: 32.35%;
+                height: 200px;
+                float: left;
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+            .h1{
+                color: green;
+                font-weight: 900;
+                text-align: center;
+                padding: 5px 15px;
+            }
+            .h2{
+                font-weight: 900;
+                text-align: center;
+                font-size: 50px;
+                padding: 5px 15px;
+            }
+        </style>
     </h:head>
     <h:body>
-        <h:form>
-            <p:dashboard>
-                <p:panel id="panel" header="#{dashView.dashboard.mobName}">
-                    <p:panelGrid columns="3">
-                        <h:outputText value="#{dashView.dashboard.mobModel}"/>
-                    </p:panelGrid>
-                </p:panel>
-            </p:dashboard>
-        </h:form>
+        <div class="row">
+            <div class="col">
+                <h1 class="h1">Brief Info</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.dashTitle}"/></h2>
+            </div>
+            <div class="col">
+                <h1 class="h1">Mobile brand</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.mobName}"/></h2>
+            </div>
+            <div class="col">
+                <h1 class="h1">Mobile Model</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.mobModel}"/></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h1 class="h1">Quantity</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.quantity}"/></h2>
+            </div>
+            <div class="col">
+                <h1 class="h1">Unit Price</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.price}"/></h2>
+            </div>
+            <div class="col">
+                <h1 class="h1">Today's Sales</h1>
+                <h2 class="h2"><h:outputText value="#{dashView.dashboard.todaysSales}"/></h2>
+            </div>
+        </div>
     </h:body>
 </html>

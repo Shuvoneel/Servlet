@@ -2,11 +2,12 @@ package com.dawntechbd;
 
 public class DashClass {
 
-    private String dashTitle = "Mobile Details";
+    private String dashTitle;
     private String mobName = "Nokia";
     private String mobModel = "3310";
     private int quantity = 50;
     private double price = 4500.0;
+    private String todaysSales = "20 pcs";
 
     public String getMobName() {
         return mobName;
@@ -46,6 +47,14 @@ public class DashClass {
 
     public void setDashTitle(String dashTitle) {
         this.dashTitle = dashTitle;
+    }
+
+    public String getTodaysSales() {
+        return todaysSales;
+    }
+
+    public void setTodaysSales(String todaysSales) {
+        this.todaysSales = todaysSales;
     }
 
 }
