@@ -9,7 +9,7 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Selection Page</title>
+                <title>Radio Button Page</title>
             </f:facet>
         </h:head>
 
@@ -19,9 +19,9 @@
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
                     <a href="http://localhost:8080/showcase/faces/index.xhtml">Index</a><br/>
-                    <a href="http://localhost:8080/showcase/faces/radioButton.xhtml">Radio Button</a><br/>
+                    <a href="http://localhost:8080/showcase/faces/selection.xhtml">Selection</a><br/>
                     <a href="http://localhost:8080/showcase/faces/checkbox.xhtml">Checkbox</a><br/>
-                    <a href="http://localhost:8080/showcase/faces/dataSort.xhtml">Sort</a><br/>
+                     <a href="http://localhost:8080/showcase/faces/dataSort.xhtml">Sort</a><br/>
                     <a href="http://localhost:8080/showcase/faces/dataFilter.xhtml">Filter</a><br/>
                     <a href="http://localhost:8080/showcase/faces/paginator.xhtml">Paginator</a>
                 </p:layoutUnit>
@@ -45,27 +45,26 @@
 
                 <p:layoutUnit position="center">
                     <h:form id="form">
-                        <p:dataTable id="basicDT" value="#{busView.lists}" var="bus">
+                        <p:dataTable id="radioDT" var="bus" value="#{busView.lists}" selection="#{busView.selectedBus}" rowKey="#{bus.id}">
                             <f:facet name="header">
-                                Basic Selection
+                                Radio Button
                             </f:facet>
+                            <p:column selectionMode="single" style="width:16px;text-align:center"/>
                             <p:column headerText="Id">
-                                <h:outputText value="#{bus.id}"/>
-                            </p:column>
-                            <p:column headerText="Brand">
-                                <h:outputText value="#{bus.brand}"/>
+                                <h:outputText value="#{bus.id}" />
                             </p:column>
                             <p:column headerText="Year">
-                                <h:outputText value="#{bus.year}"/>
+                                <h:outputText value="#{bus.year}" />
+                            </p:column>
+                            <p:column headerText="Brand">
+                                <h:outputText value="#{bus.brand}" />
                             </p:column>
                             <p:column headerText="Color">
-                                <h:outputText value="#{bus.color}"/>
+                                <h:outputText value="#{bus.color}" />
                             </p:column>
-                            <p:column style="width:32px;text-align: center">
-                                <p:commandButton update=":form:busDetail" oncomplete="PF('busDialog').show()" icon="pi pi-search" title="View">
-                                    <f:setPropertyActionListener value="#{bus}" target="#{busView.selectedBus}" />
-                                </p:commandButton>
-                            </p:column>
+                            <f:facet name="footer">
+                                <p:commandButton process="radioDT" update=":form:busDetail" icon="pi pi-search" value="View" oncomplete="PF('busDialog').show()" />
+                            </f:facet>
                         </p:dataTable>
 
                         <p:dialog header="Bus Info" widgetVar="busDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">

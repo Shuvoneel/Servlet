@@ -9,7 +9,7 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Selection Page</title>
+                <title>CheckBox Page</title>
             </f:facet>
         </h:head>
 
@@ -20,8 +20,8 @@
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
                     <a href="http://localhost:8080/showcase/faces/index.xhtml">Index</a><br/>
                     <a href="http://localhost:8080/showcase/faces/radioButton.xhtml">Radio Button</a><br/>
-                    <a href="http://localhost:8080/showcase/faces/checkbox.xhtml">Checkbox</a><br/>
-                    <a href="http://localhost:8080/showcase/faces/dataSort.xhtml">Sort</a><br/>
+                    <a href="http://localhost:8080/showcase/faces/selection.xhtml">Selection</a><br/>
+                     <a href="http://localhost:8080/showcase/faces/dataSort.xhtml">Sort</a><br/>
                     <a href="http://localhost:8080/showcase/faces/dataFilter.xhtml">Filter</a><br/>
                     <a href="http://localhost:8080/showcase/faces/paginator.xhtml">Paginator</a>
                 </p:layoutUnit>
@@ -45,45 +45,33 @@
 
                 <p:layoutUnit position="center">
                     <h:form id="form">
-                        <p:dataTable id="basicDT" value="#{busView.lists}" var="bus">
+                        <p:dataTable id="checkboxDT" var="bus" value="#{busView.lists}" selection="#{busView.selectedBusses}" rowKey="#{bus.id}" style="margin-bottom:0">
                             <f:facet name="header">
-                                Basic Selection
+                                Checkbox
                             </f:facet>
+                            <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
                             <p:column headerText="Id">
-                                <h:outputText value="#{bus.id}"/>
-                            </p:column>
-                            <p:column headerText="Brand">
-                                <h:outputText value="#{bus.brand}"/>
+                                <h:outputText value="#{bus.id}" />
                             </p:column>
                             <p:column headerText="Year">
-                                <h:outputText value="#{bus.year}"/>
+                                <h:outputText value="#{bus.year}" />
+                            </p:column>
+                            <p:column headerText="Brand">
+                                <h:outputText value="#{bus.brand}" />
                             </p:column>
                             <p:column headerText="Color">
-                                <h:outputText value="#{bus.color}"/>
+                                <h:outputText value="#{bus.color}" />
                             </p:column>
-                            <p:column style="width:32px;text-align: center">
-                                <p:commandButton update=":form:busDetail" oncomplete="PF('busDialog').show()" icon="pi pi-search" title="View">
-                                    <f:setPropertyActionListener value="#{bus}" target="#{busView.selectedBus}" />
-                                </p:commandButton>
-                            </p:column>
+                            <f:facet name="footer">
+                                <p:commandButton process="checkboxDT" update=":form:multiBusDetail" icon="pi pi-search" value="View" oncomplete="PF('multiBusDialog').show()" />
+                            </f:facet>
                         </p:dataTable>
 
-                        <p:dialog header="Bus Info" widgetVar="busDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                            <p:outputPanel id="busDetail" style="text-align:center;">
-                                <p:panelGrid  columns="2" rendered="#{not empty busView.selectedBus}" columnClasses="label,value">
-
-                                    <h:outputText value="Id:" />
-                                    <h:outputText value="#{busView.selectedBus.id}" />
-
-                                    <h:outputText value="Year" />
-                                    <h:outputText value="#{busView.selectedBus.year}" />
-
-                                    <h:outputText value="Color:" />
-                                    <h:outputText value="#{busView.selectedBus.color}" style="color:#{dtSelectionView.selectedCar.color}"/>
-
-                                    <h:outputText value="Brand" />
-                                    <h:outputText value="$#{busView.selectedBus.brand}" />
-                                </p:panelGrid>
+                        <p:dialog header="Selected Busses" widgetVar="multiBusDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="220">
+                            <p:outputPanel id="multiBusDetail" style="text-align:center;">
+                                <ui:repeat value="#{busView.selectedBusses}" var="bus">
+                                    <h:outputText value="#{bus.brand} - #{bus.year}" style="display:block"/>
+                                </ui:repeat>
                             </p:outputPanel>
                         </p:dialog>
                     </h:form>
