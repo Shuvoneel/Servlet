@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Index Page</title>
+    </h:head>
+    <h:body>
+        Student File Upload
+        <h:form enctype="multipart/form-data">
+            <h:inputFile value="#{studentBean.file1}"/><br/>
+            <h:inputFile value="#{studentBean.file2}"/><br/>
+            <h:commandButton value="Upload" action="#{studentBean.upload()}"/>
+            <a href="http://localhost:8080/filesUpDown/faces/download.xhtml">Download</a>
+        </h:form>
+        <hr/>
+        <p:graphicImage url="/resources/images/one.jpeg" height="200" width="200"/>
+        <hr/>
+        <p:dataTable var="student" value="#{studentBean.students}">
+            <p:column headerText="Student Name">
+                <h:outputText value="#{student.name}"/>
+            </p:column>
+
+            <p:column headerText="Photo">
+                <p:graphicImage url="/resources/images/#{student.filename}" height="200" width="200"/>
+            </p:column>
+        </p:dataTable>
+    </h:body>
+</html>
+
