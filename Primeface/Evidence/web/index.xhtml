@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    Header
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h1>Students Information Database</h1>
+                    <p:dataTable value="#{studentBean.studentList}" var="student" paginator="true" rowsPerPageTemplate="5,10,15"
+                                 emptyMessage="No Student found with given criteria" filteredValue="#{studentBean.studentList}">
+                        <p:column headerText="Name" filterBy="#{student.name}">
+                            <h:outputText value="#{student.name}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="Email" filterBy="#{student.email}">
+                            <h:outputText value="#{student.email}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="Gender" filterBy="#{student.gender}">
+                            <h:outputText value="#{student.gender}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="Course" filterBy="#{student.course}">
+                            <h:outputText value="#{student.course}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="City" filterBy="#{student.city}">
+                            <h:outputText value="#{student.city}"></h:outputText>
+                        </p:column>
+                    </p:dataTable>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
