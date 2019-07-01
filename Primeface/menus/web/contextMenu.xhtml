@@ -29,12 +29,18 @@
                     <h:form>
                         <p:growl id="messages" showDetail="true"/>
 
-                        <p:contextMenu>
-                            <p:menuitem value="Save" action="#{menuView.save}" update="messages" icon="pi pi-save"/>
-                            <p:menuitem value="Update" action="#{menuView.update}" update="messages" icon="pi pi-refresh"/>
-                            <p:menuitem value="Delete" action="#{menuView.delete}" ajax="false" icon="pi pi-times"/>
-                            <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="pi pi-home"/>
-                        </p:contextMenu>
+                        <h3>Overlay</h3>
+                        <p:commandButton id="dynaButton" value="Show" type="button" icon="pi pi-home"/>
+                        <p:menu overlay="true" trigger="dynaButton" my="left top" at="left bottom">
+
+                            <p:submenu label="Menu">
+                                <p:menuitem value="Add Product"  url="index.xhtml" icon="pi pi-times"/>
+                                <p:menuitem value="Purchase" url="purchase.xhtml" icon="pi pi-times"/>
+                                <p:menuitem value="Sales" url="sales.xhtml" icon="pi pi-times"/>
+                                <p:menuitem value="Summary" url="summary.xhtml" icon="pi pi-times"/>
+                            </p:submenu>
+
+                        </p:menu>
                     </h:form>
                 </p:layoutUnit>
 
