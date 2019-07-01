@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <link rel="stylesheet" type="text/css" href="resources/bootstrap.css"/>
+                <title>Summary</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div class="row">
+                        <div class="col-3"><img src="images/logo.png" alt="LOGO" width="100px" height="50px"/></div>
+                        <div class="col-3"></div>
+                        <div class="col-6"> <h1>Dawn Technology Bangladesh</h1></div>
+                    </div>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    <h6 style="text-align: center">&copy; All rights reserved. 2018 DawntechBD Inc.</h6>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Menus">
+                            <p:menuitem value="Product" url="index.xhtml" />
+                            <p:menuitem value="Purchase" url="purchase.xhtml" />
+                            <p:menuitem value="Sales" url="sales.xhtml" />
+                            <p:menuitem value="Summary" url="summary.xhtml" />
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <div class="container">
+
+                        <div style="width: 90%; margin: auto">
+                            <h:form id="lists">
+                                <p:dataTable id="stuList" var="sd" value="#{salesController.salesList}">
+
+                                    <p:column headerText="Category">
+                                        <h:outputText value="#{sd.category}" />
+                                    </p:column>
+
+                                    <p:column headerText="Brand">
+                                        <h:outputText value="#{sd.brand}" />
+                                    </p:column>
+
+                                    <p:column headerText="Code">
+                                        <h:outputText value="#{sd.code}" />
+                                    </p:column>
+                                    <p:column headerText="Total Quantity">
+                                        <h:outputText value="#{summaryController.summary.totalQty}" />
+                                    </p:column>
+                                    <p:column headerText="Sales Quantity">
+                                        <h:outputText value="#{summaryController.summary.saleQty}" />
+                                    </p:column>
+                                    <p:column headerText="Available Quantity">
+                                        <h:outputText value="#{summaryController.summary.availableQty}" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>

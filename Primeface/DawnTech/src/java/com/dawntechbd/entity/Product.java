@@ -8,21 +8,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "p_category")
-public class Category {
+@Table(name = "products")
+public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Column(name = "c_name")
-    private String categoryName;
+    @Column(name = "category")
+    private String category;
     @Column(name = "brand")
     private String brand;
+    @Column(name = "code")
     private String code;
 
-    public Category() {
-        super();
+    public Product() {
+    }
+
+    public Product(int id, String category, String brand, String code) {
+        this.id = id;
+        this.category = category;
+        this.brand = brand;
+        this.code = code;
     }
 
     public int getId() {
@@ -33,12 +40,12 @@ public class Category {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getBrand() {
@@ -50,16 +57,11 @@ public class Category {
     }
 
     public String getCode() {
-        return brand;
+        return code;
     }
 
-    public String setCode() {
-        return brand;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" + "id=" + id + ", categoryName=" + categoryName + ", brand=" + brand + ", code=" + code + "}";
+    public void setCode(String code) {
+        this.code = code;
     }
 
 }

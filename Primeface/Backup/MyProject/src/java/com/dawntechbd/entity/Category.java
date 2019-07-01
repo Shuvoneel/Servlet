@@ -17,7 +17,7 @@ public class Category {
     private int id;
     @Column(name = "c_name")
     private String categoryName;
-    @Column(name = "brand")
+    @Column(name = "note")
     private String brand;
     private String code;
 
