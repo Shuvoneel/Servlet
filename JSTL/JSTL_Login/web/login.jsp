@@ -9,7 +9,7 @@
         <title>Login Page</title>
     </head>
     <body>
-        <h1>Please Login</h1>
+        <h1>Please Login with your UserId and Password</h1>
 
         <form action="authentication.jsp" >
             Username: <input type="text" name="username"/><br/>

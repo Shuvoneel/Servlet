@@ -9,7 +9,8 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Index</title>
+                <link rel="stylesheet" type="text/css" href="resources/bootstrap.css"/>
+                <title>Home</title>
             </f:facet>
         </h:head>
 
@@ -18,26 +19,106 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Header
+                    <div class="row">
+                        <div class="col-3"><img src="images/logo.png" alt="LOGO" width="100px" height="50px"/></div>
+                        <div class="col-9">
+                            <h1>Dawn Technology Bangladesh</h1>
+                        </div>
+                    </div>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                    Footer
+                    <h6 style="text-align: center">&copy; All rights reserved. 2018 DawntechBD Inc.</h6>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="175"  collapsible="true">
                     <p:menu>
                         <p:submenu label="Resources">
-                            <p:menuitem value="Product" url="product.xhtml" />
-                            <p:menuitem value="Dashboard" url="dashboard.xhtml" />
-                            <p:menuitem value="Display" url="display.xhtml" />
+                            <p:menuitem value="Home" url="index.xhtml" />
+                            <p:menuitem value="Product" url="pCategory.xhtml" />
+                            <p:menuitem value="Purchase" url="pPurchase.xhtml" />
+                            <p:menuitem value="Sales" url="pSales.xhtml" />
                         </p:submenu>
 
                     </p:menu>
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h1 class="h1"><h:outputText value="#{dashboardController.dashboard.dashTitle}"/></h1>
+                                <h2 class="h2">Mobile Brand: <h:outputText value="#{dashboardController.dashboard.proName}"/></h2>
+                                <h2 class="h2">Mobile Model: <h:outputText value="#{dashboardController.dashboard.proModel}"/></h2>
+                                <h2 class="h2">Quantity: <h:outputText value="#{dashboardController.dashboard.quantity}"/></h2>
+                                <h2 class="h2">Today's Sales: <h:outputText value="#{dashboardController.dashboard.todaysSales}"/></h2>
+                            </div>
+                        </div>
+
+                    </div>
                 </p:layoutUnit>
 
             </p:layout>

@@ -18,12 +18,33 @@
             30
         </session-timeout>
     </session-config>
+       
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>vader</param-value>
+    </context-param>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Security Example</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>developer</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-role>
+        <role-name>developer</role-name>
+    </security-role>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/loginError.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
-    
-    <context-param>
-        <param-name>primefaces.THEME</param-name>
-        <param-value>eggplant</param-value>
-    </context-param>
 </web-app>
