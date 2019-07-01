@@ -9,27 +9,27 @@ import javax.faces.context.FacesContext;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import entity.User;
-import service.UserService;
+import entity.ProductCategory;
+import service.ProductCategoryService;
 
 @ManagedBean
-public class UserController {
+public class ProductCategoryController {
 
-    final static Logger logger = Logger.getLogger(UserController.class);
+    final static Logger logger = Logger.getLogger(ProductCategoryController.class);
 
-    private UserService userService;
-    private User user;
+    private ProductCategoryService productCategoryService;
+    private ProductCategory productCategory;
 
-    private List<User> users;
+    private List<ProductCategory> productCategories;
 
     public String save() {
         try {
 
-            userService = new UserService();
-            userService.persist(user);
+            productCategoryService = new ProductCategoryService();
+            productCategoryService.persist(productCategory);
 
             notificationSuccess("Persist Success!");
-            user = null;
+            productCategory = null;
 
         } catch (Exception e) {
             notificationError(e, "Persist Error!");
@@ -55,22 +55,22 @@ public class UserController {
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
-    public User getUser() {
-        if (user == null) {
-            user = new User();
+    public ProductCategory getProductCategory() {
+        if (productCategory == null) {
+            productCategory = new ProductCategory();
         }
-        return user;
+        return productCategory;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setProductCategory(ProductCategory productCategory) {
+        this.productCategory = productCategory;
     }
 
-    public List<User> getUsers() {
+    public List<ProductCategory> getProductCategories() {
         try {
 
-            userService = new UserService();
-            users = userService.findAll();
+            productCategoryService = new ProductCategoryService();
+            productCategories = productCategoryService.findAll();
 
         } catch (Exception e) {
             notificationError(e, "Persist Error!");
@@ -78,11 +78,11 @@ public class UserController {
             logger.error("This is error : " + e);
             logger.fatal("This is fatal : " + e);
         }
-        return users;
+        return productCategories;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setProductCategories(List<ProductCategory> productCategories) {
+        this.productCategories = productCategories;
     }
 
 }

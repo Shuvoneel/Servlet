@@ -37,11 +37,11 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.connection.pool_size">500</property>
 		<property name="show_sql">true</property>
-		<mapping class="com.coderbd.entity.ProductCategory" />
-		<mapping class="com.coderbd.entity.ProductPurchase" />
-		<mapping class="com.coderbd.entity.ProductSales" />
-		<mapping class="com.coderbd.entity.ProductSummary" />
-		<mapping class="com.coderbd.entity.User" />
+		<mapping class="entity.ProductCategory" />
+		<mapping class="entity.ProductPurchase" />
+		<mapping class="entity.ProductSales" />
+		<mapping class="entity.ProductSummary" />
+		<mapping class="entity.User" />
 	
 		
 		

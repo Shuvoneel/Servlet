@@ -1,5 +1,5 @@
 package common;
-
+import util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import java.lang.reflect.ParameterizedType;
@@ -8,7 +8,7 @@ import java.util.List;
 
 import javassist.bytecode.SignatureAttribute.TypeVariable;
 import javax.transaction.Transactional;
-import net.sf.ehcache.hibernate.HibernateUtil;
+
 
 public class CommonService<E> implements CommonDao<E> {
 

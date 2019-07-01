@@ -9,27 +9,27 @@ import javax.faces.context.FacesContext;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import entity.User;
-import service.UserService;
+import entity.ProductSummary;
+import service.ProductSummaryService;
 
 @ManagedBean
-public class UserController {
+public class ProductSummaryController {
 
-    final static Logger logger = Logger.getLogger(UserController.class);
+    final static Logger logger = Logger.getLogger(ProductSummaryController.class);
 
-    private UserService userService;
-    private User user;
+    private ProductSummaryService productSummaryService;
+    private ProductSummary productSummary;
 
-    private List<User> users;
+    private List<ProductSummary> productSummaries;
 
     public String save() {
         try {
 
-            userService = new UserService();
-            userService.persist(user);
+            productSummaryService = new ProductSummaryService();
+            productSummaryService.persist(productSummary);
 
             notificationSuccess("Persist Success!");
-            user = null;
+            productSummary = null;
 
         } catch (Exception e) {
             notificationError(e, "Persist Error!");
@@ -55,34 +55,23 @@ public class UserController {
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
-    public User getUser() {
-        if (user == null) {
-            user = new User();
+    public ProductSummary getProductSummary() {
+        if (productSummary == null) {
+            productSummary = new ProductSummary();
         }
-        return user;
+        return productSummary;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setProductSummary(ProductSummary productSummary) {
+        this.productSummary = productSummary;
     }
 
-    public List<User> getUsers() {
-        try {
-
-            userService = new UserService();
-            users = userService.findAll();
-
-        } catch (Exception e) {
-            notificationError(e, "Persist Error!");
-            logger.debug("This is debug :" + e);
-            logger.error("This is error : " + e);
-            logger.fatal("This is fatal : " + e);
-        }
-        return users;
+    public List<ProductSummary> getProductSummaries() {
+        return productSummaries;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setProductSummaries(List<ProductSummary> productSummaries) {
+        this.productSummaries = productSummaries;
     }
 
 }
