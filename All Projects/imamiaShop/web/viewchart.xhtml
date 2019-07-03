@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>View Chart</title>
+            </f:facet>
+            <link href="resources/css/default.css" rel="stylesheet" type="text/css"/>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <h1 style="text-align: center">Imamima Online Shop</h1>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    <h4 style="text-align: center">www.imamiashop@gmail.com</h4> 
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Shoping" collapsible="true">
+                    <p:menu>
+                        <p:menuitem value="Home" url="index.xhtml" />
+                        <p:menuitem value="Add Category" url="addcategory.xhtml" />
+                        <p:menuitem value="Add Sub Category" url="addsubcat.xhtml" />
+                        <p:menuitem value="Add Product" url="addproduct.xhtml" />
+
+
+
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+
+                    <h:form id="form" >
+                        <p:dataTable var="cart" value="#{shoppingCart.cart}"  rows="10">
+                            <f:facet name="header">
+                                <h:outputLabel value="Your Chart"/>
+                            </f:facet>
+                            <p:column headerText="Product Name">
+                                <p:outputLabel value="#{cart.p.proName}"/>
+                            </p:column>
+                            <p:column headerText="Quantity">
+                                <p:inputText value="#{cart.quantit}" style="width: 20px"/>
+                            </p:column>
+                            <p:column headerText="Price">
+                                <p:outputLabel value="#{cart.p.proPrice}"/>
+                            </p:column>
+                            <p:column headerText="Images">
+                                <p:graphicImage name="#{cart.p.proUrl}" library="images" width="50" height="60"/>
+                            </p:column>
+                            <p:column headerText="Delete">
+                                <h:commandButton value="Delete" action="#{shoppingCart.removeCart(cart)}"/>
+                            </p:column>
+                            <f:facet name="footer">
+                                Total : <h:outputLabel value="#{shoppingCart.total}"/>
+                            </f:facet>
+                        </p:dataTable>
+                        <p:commandButton value="Update" action="#{shoppingCart.updateCart()}" ajax="false"/>
+                        <p:commandButton value="Continue Shopping" action="index.xhtml"/>
+                        <p:commandButton value="Process Cart" action="paytype.xhtml"/>
+
+                    </h:form>
+
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
